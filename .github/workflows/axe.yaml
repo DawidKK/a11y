@@ -14,5 +14,5 @@ jobs:
       - run: npm start & npx wait-on http://localhost:3000
       - name: Run axe
         run: |
-          npm install -g @axe-core/cli
-          axe --chrome-options="no-sandbox" http://localhost:3000 --exit
+          npm install -g @axe-core/cli@4.2.2
+          axe http://localhost:3000 --exit
