@@ -6,10 +6,12 @@ const Layout = ({ children }) => {
   return (
     <div>
       <header>
-        <button onClick={() => setContext(!context)}>switch to hight contrast</button>
+        <button onClick={() => setContext(!context)}>switch to high contrast</button>
         {context ? 'on' : 'off'}
       </header>
-      {children}
+      <main role="main">
+        {children}
+      </main>
     </div>
   )
 }

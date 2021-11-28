@@ -1,18 +1,20 @@
+import { useRef, useEffect } from 'react'
+
 import Layout from '../../containers/Layout'
 const CarDetails = props => {
+  const headerNode = useRef(null)
+  useEffect(() => {
+    headerNode.current.focus()
+  }, [])
+
   return (
     <Layout>
       <div className="details">
         <header>
-          <h1 className="details__header">Car details</h1>
+          <h1 ref={headerNode} tabIndex={0} className="details__header">Car details</h1>
         </header>
-        <p className="details__description">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-           exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-           Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-           eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt 
-           in culpa qui officia deserunt mollit anim id est laborum.
+        <p tabIndex={0} aria-label="Car details description. Car details are written here" className="details__description">
+          Car details are written here
         </p>
       </div>
     </Layout>
