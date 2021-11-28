@@ -15,4 +15,4 @@ jobs:
       - name: Run axe
         run: |
           npm install -g @axe-core/cli
-          axe http://localhost:3000 --exit
+          axe --chrome-options="no-sandbox" http://localhost:3000 --exit
