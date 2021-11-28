@@ -15,4 +15,4 @@ jobs:
       - name: Run axe
         run: |
           npm install -g @axe-core/cli
-          axe http://localhost:3000 --exit
+          axe --show-errors http://localhost:3000 --chromedriver-path="/usr/local/bin/chromedriver"
