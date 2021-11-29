@@ -9,6 +9,7 @@ const List = props => {
     headerNode.current.focus()
   }, [])
   const navigate = useNavigate()
+
   return (
     <Layout>
       <h1 tabIndex={1} ref={headerNode} aria-label="View with three items to click: Bike, Car and doll ">Accessibility app</h1>

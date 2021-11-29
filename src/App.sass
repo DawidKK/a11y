@@ -1,3 +1,9 @@
+$contrast-text-color: #ffffff
+$contrast-bg-color: #2442BC
+$contrast-border-color: #ff0000
+
+$contrast-bg-color-text: #212745
+
 button
   display: inline-block
   border: none
@@ -6,6 +12,11 @@ button
   cursor: pointer
   text-align: center
   background: transparent
+
+.btn
+  padding: 10px 20px
+  color: #91216E
+  background-color: #9999ff
 
 .navigation
   height: 90px
@@ -23,7 +34,7 @@ button
 
   &__button
     padding: 10px 20px
-    color: black
+    color: #91216E
     background-color: #9999ff
 
 .details
@@ -37,3 +48,23 @@ button
   &__description
     background-color: #ccc
     padding: 10px
+
+.-high-contrast
+  .btn
+    color: $contrast-border-color
+    background-color: $contrast-bg-color
+    color: $contrast-text-color
+
+  .navigation
+    background-color: transparent
+    box-shadow: 0 0 0 3px $contrast-border-color
+
+    &__button
+      color: $contrast-border-color
+      background-color: $contrast-bg-color
+      color: $contrast-text-color
+
+  .details
+    &__header, &__description
+      background-color: $contrast-bg-color-text
+      color: $contrast-text-color
