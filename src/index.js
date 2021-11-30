@@ -5,13 +5,18 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 if (process.env.NODE_ENV !== 'production') {
-  import('react-axe').then(axe => {
-    axe.default(React, ReactDOM, 1000);
-    ReactDOM.render(<App />, document.getElementById('root'));
+  const axe = require('@axe-core/react');
+  axe(React, ReactDOM, 1000, undefined, undefined, logger => {
+    logger.violations.forEach(({nodes}) => {
+      nodes.forEach(({target}) => {
+        console.log(`element with issue =>`, target)
+        document.querySelector(target).style.border = '3px solid red'
+      })
+    })
   });
-} else {
-  ReactDOM.render(<App />, document.getElementById('root'));
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
