@@ -19,7 +19,7 @@ const List = props => {
             <button tabIndex={0} className="navigation__button">Bike</button>
           </li>
           <li className="navigation__item">
-            <button tabIndex={0} aria-label="Click to go to car details" className="navigation__button" onClick={() => navigate('/car-details')}>Car</button>
+            <button tabIndex={0} aria-label="Go to car details" className="navigation__button" onClick={() => navigate('/car-details')}>Car</button>
           </li>
           <li className="navigation__item">
             <button tabIndex={0} className="navigation__button">Doll</button>
